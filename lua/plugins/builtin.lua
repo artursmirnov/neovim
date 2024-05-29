@@ -1,3 +1,5 @@
+local projects = require("utils.projects")
+
 return {
 
   {
@@ -273,10 +275,15 @@ return {
       local function filenameFirst(_, path)
         local tail = vim.fs.basename(path)
         local parent = vim.fs.dirname(path)
-        parent = franciumPathCleanup(parent)
+
+        if projects.isFrancium then
+          parent = franciumPathCleanup(parent)
+        end
+
         if parent == "." then
           return tail
         end
+
         return string.format("%s\t\t%s", tail, parent)
       end
 
