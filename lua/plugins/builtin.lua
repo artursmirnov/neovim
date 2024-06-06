@@ -351,4 +351,11 @@ return {
       })
     end,
   },
+
+  {
+    "CopilotC-Nvim/CopilotChat.nvim",
+    opts = {
+      context = "buffers",
+    },
+  },
 }
