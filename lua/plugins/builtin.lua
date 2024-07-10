@@ -254,6 +254,7 @@ return {
   {
     "nvim-telescope/telescope.nvim",
     keys = {
+      { "<leader>fb", false },
       { "<leader><space>", "<cmd>Telescope buffers sort_mru=true sort_lastused=true<cr>", desc = "Buffers" },
       {
         "<leader>fr",
