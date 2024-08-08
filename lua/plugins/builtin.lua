@@ -111,9 +111,10 @@ return {
       opts.sections.lualine_b = {
         { "branch", icon = "" },
       }
-      opts.sections.lualine_z = {
-        { "progress" },
-      }
+      opts.sections.lualine_z = opts.sections.lualine_y
+      -- opts.sections.lualine_z = {
+      --   { "progress" },
+      -- }
       opts.sections.lualine_y = opts.sections.lualine_x
       opts.sections.lualine_x = {}
     end,
