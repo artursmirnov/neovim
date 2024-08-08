@@ -113,8 +113,23 @@ return {
   {
     "nvim-lualine/lualine.nvim",
     opts = function(_, opts)
+      local icons = LazyVim.config.icons
+
       opts.sections.lualine_b = {
         { "branch", icon = "" },
+      }
+      opts.sections.lualine_c = {
+        {
+          "diagnostics",
+          symbols = {
+            error = icons.diagnostics.Error,
+            warn = icons.diagnostics.Warn,
+            info = icons.diagnostics.Info,
+            hint = icons.diagnostics.Hint,
+          },
+        },
+        { "filetype", icon_only = true, separator = "", padding = { left = 1, right = 0 } },
+        { "filename", filestatus = false, path = 1 },
       }
       opts.sections.lualine_z = opts.sections.lualine_y
       -- opts.sections.lualine_z = {
@@ -122,6 +137,26 @@ return {
       -- }
       opts.sections.lualine_y = opts.sections.lualine_x
       opts.sections.lualine_x = {}
+
+      local function window()
+        return vim.api.nvim_win_get_number(0)
+      end
+      opts.winbar = {
+        lualine_y = { window },
+        lualine_c = {
+          LazyVim.lualine.root_dir(),
+          { "filetype", icon_only = true, separator = "", padding = { left = 1, right = 0 } },
+          { LazyVim.lualine.pretty_path() },
+        },
+      }
+      opts.inactive_winbar = {
+        lualine_y = { window },
+        lualine_c = {
+          LazyVim.lualine.root_dir(),
+          { "filetype", icon_only = true, separator = "", padding = { left = 1, right = 0 } },
+          { LazyVim.lualine.pretty_path() },
+        },
+      }
     end,
   },
 
