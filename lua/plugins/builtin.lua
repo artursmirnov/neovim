@@ -8,6 +8,11 @@ return {
   },
 
   {
+    "SmiteshP/nvim-navic",
+    enabled = false,
+  },
+
+  {
     "akinsho/bufferline.nvim",
     enabled = true,
     opts = function()
