@@ -17,6 +17,9 @@ opt.cursorline = true
 -- Disable code folding
 opt.foldenable = false
 
+-- Disable trouble_lualine
+vim.g.trouble_lualine = false
+
 -- Command abbreviations
 vim.cmd("ca qq qall")
 vim.cmd("ca ww bd")
