@@ -11,6 +11,17 @@ return {
   },
 
   {
+    "nvim-telescope/telescope-frecency.nvim",
+    dependencies = { "nvim-telescope/telescope.nvim" },
+    config = function()
+      require("telescope").load_extension("frecency")
+    end,
+    keys = {
+      { "<leader>ff", "<cmd>Telescope frecency workspace=CWD theme=ivy<CR>", desc = "Find files" },
+    },
+  },
+
+  {
     "nvim-telescope/telescope-file-browser.nvim",
     dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
     init = function()

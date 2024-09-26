@@ -308,8 +308,9 @@ return {
         end,
         desc = "Find related files",
       },
-      { "<leader>ff", LazyVim.telescope("files", { cwd = false }), desc = "Find Files (cwd)" },
-      { "<leader>fF", LazyVim.telescope("files"), desc = "Find Files (Root Dir)" },
+      -- Replaced by telescope-frecency
+      -- { "<leader>ff", LazyVim.telescope("files", { cwd = false }), desc = "Find Files (cwd)" },
+      -- { "<leader>fF", LazyVim.telescope("files"), desc = "Find Files (Root Dir)" },
       { "<leader>sG", LazyVim.telescope("live_grep"), desc = "Grep (Root Dir)" },
       { "<leader>sg", LazyVim.telescope("live_grep", { cwd = false }), desc = "Grep (cwd)" },
       { "<leader>sW", LazyVim.telescope("grep_string", { word_match = "-w" }), desc = "Word (Root Dir)" },
