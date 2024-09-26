@@ -296,7 +296,11 @@ return {
     "nvim-telescope/telescope.nvim",
     keys = {
       { "<leader>fb", false },
-      { "<leader><space>", "<cmd>Telescope buffers sort_mru=true sort_lastused=true<cr>", desc = "Buffers" },
+      {
+        "<leader><space>",
+        "<cmd>Telescope buffers sort_mru=true sort_lastused=true initial_mode=normal<cr>",
+        desc = "Buffers",
+      },
       {
         "<leader>fr",
         function()
@@ -362,8 +366,8 @@ return {
               ["<C-down>"] = actions.preview_scrolling_down,
               ["<C-up>"] = actions.preview_scrolling_up,
               ["<C-right>"] = actions.preview_scrolling_right,
-              ["<C-s>"] = actions.select_vertical,
-              ["<C-d>"] = actions.delete_buffer,
+              ["<s>"] = actions.select_vertical,
+              ["<d>"] = actions.delete_buffer,
             },
           },
           path_display = filenameFirst,

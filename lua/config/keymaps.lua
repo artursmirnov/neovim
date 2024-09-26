@@ -21,5 +21,4 @@ vim.keymap.set("v", "<leader>y", '"*y', { desc = "Copy to system clipboard" })
 vim.keymap.set("v", "<leader>y", '"*y', { desc = "Copy to system clipboard" })
 
 -- Buffers
-vim.keymap.set("n", "<C-x>", "<cmd>bd<cr>", { desc = "Close current buffer" })
 vim.keymap.set("n", "<C-c>", "<cmd>close<cr>", { desc = "Close split" })

@@ -22,6 +22,7 @@ return {
             grouped = true,
             select_buffer = true,
             hidden = { file_browser = true, folder_browser = true },
+            hide_parent_dir = true,
             git_status = false,
             theme = "ivy",
             quiet = true,
@@ -40,7 +41,7 @@ return {
                 ["<C-t>"] = false,
                 ["<C-f>"] = fb_actions.toggle_browser,
                 ["<C-h>"] = false,
-                ["<C-s>"] = false,
+                ["<C-s>"] = require("telescope.actions").select_vertical,
                 ["<bs>"] = fb_actions.backspace,
               },
               ["n"] = {
@@ -57,7 +58,7 @@ return {
                 ["f"] = fb_actions.toggle_browser,
                 ["."] = fb_actions.toggle_hidden,
                 ["h"] = false,
-                ["s"] = false,
+                ["s"] = require("telescope.actions").select_vertical,
                 ["<bs>"] = fb_actions.goto_parent_dir,
               },
             },
@@ -69,7 +70,7 @@ return {
     keys = {
       {
         "<leader>fb",
-        "<cmd>Telescope file_browser path=%:p:h select_buffer=true<CR>",
+        "<cmd>Telescope file_browser path=%:p:h select_buffer=true initial_mode=normal<CR>",
         desc = "File browser",
       },
     },
